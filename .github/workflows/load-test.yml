@@ -32,6 +32,9 @@ jobs:
     - name: Install dependencies
       run: pip install requests
 
+    - name: Debug Directory
+      run: ls -R
+
     - name: Run Load Testing
       run: |
         python load_test.py "${{ github.event.inputs.url }}" ${{ github.event.inputs.total_requests }} ${{ github.event.inputs.total_threads }}
