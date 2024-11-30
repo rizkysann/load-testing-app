@@ -37,7 +37,7 @@
 
 #     - name: Run Load Testing
 #       run: |
-#         python load_test.py "${{ github.event.inputs.url }}" ${{ github.event.inputs.total_requests }} ${{ github.event.inputs.total_threads }}
+        # python load_test.py " ${{ github.event.inputs.url }}" ${{ github.event.inputs.total_requests }} ${{ github.event.inputs.total_threads }}
 
 name: Load Testing Workflow
 
@@ -76,4 +76,4 @@ jobs:
 
     - name: Run Load Testing
       run: |
-        python load_test.py "${{ github.event.inputs.url }}" ${{ github.event.inputs.total_requests }} ${{ github.event.inputs.total_threads }}
+        python load-test.py "${{ github.event.inputs.url }}" ${{ github.event.inputs.total_requests }} ${{ github.event.inputs.total_threads }}
