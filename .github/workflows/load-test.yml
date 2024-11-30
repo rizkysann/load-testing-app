@@ -1,3 +1,44 @@
+# name: Load Testing Workflow
+
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       url:
+#         description: 'URL target untuk load testing'
+#         required: true
+#         default: 'https://www.youtube.com/'
+#       total_requests:
+#         description: 'Jumlah total permintaan'
+#         required: true
+#         default: '10'
+#       total_threads:
+#         description: 'Jumlah thread'
+#         required: true
+#         default: '10'
+
+# jobs:
+#   load-testing:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v3
+
+#     - name: Set up Python
+#       uses: actions/setup-python@v4
+#       with:
+#         python-version: 3.12
+
+#     - name: Install dependencies
+#       run: pip install requests
+
+#     - name: Debug Directory
+#       run: ls -R
+
+#     - name: Run Load Testing
+#       run: |
+#         python load_test.py "${{ github.event.inputs.url }}" ${{ github.event.inputs.total_requests }} ${{ github.event.inputs.total_threads }}
+
 name: Load Testing Workflow
 
 on:
@@ -6,7 +47,7 @@ on:
       url:
         description: 'URL target untuk load testing'
         required: true
-        default: 'https://www.youtube.com/'
+        default: 'https://www.youtube.com'
       total_requests:
         description: 'Jumlah total permintaan'
         required: true
@@ -30,10 +71,8 @@ jobs:
         python-version: 3.12
 
     - name: Install dependencies
-      run: pip install requests
-
-    - name: Debug Directory
-      run: ls -R
+      run: |
+        pip install requests
 
     - name: Run Load Testing
       run: |
