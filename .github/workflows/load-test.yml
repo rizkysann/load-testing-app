@@ -6,15 +6,15 @@ on:
       url:
         description: 'URL target untuk load testing'
         required: true
-        default: 'https://example.com'
+        default: 'https://www.youtube.com/'
       total_requests:
         description: 'Jumlah total permintaan'
         required: true
-        default: 10
+        default: '10'
       total_threads:
         description: 'Jumlah thread'
         required: true
-        default: 10
+        default: '10'
 
 jobs:
   load-testing:
