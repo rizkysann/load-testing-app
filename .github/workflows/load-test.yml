@@ -47,7 +47,7 @@ on:
       url:
         description: 'URL target untuk load testing'
         required: true
-        default: 'https://www.youtube.com'
+        default: 'http://54.85.127.60:9000/'
       total_requests:
         description: 'Jumlah total permintaan'
         required: true
